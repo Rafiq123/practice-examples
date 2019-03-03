@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .break {
+            margin-bottom: 10px;
+        }
+
+        .container_1 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #one {
+            height: 100px;
+            flex-basis: 200px;
+            flex-grow: 1;
+            flex-direction: row;
+            border: 1px solid #fff;
+            background: #ccc
+        }
+
+        #two {
+            height: 100px;
+            flex-basis: 200px;
+            flex-grow: 2;
+            flex-direction: row;
+            border: 1px solid #fff;
+            background: #ccc
+        }
+
+        #three {
+            height: 100px;
+            flex-basis: 200px;
+            flex-grow: 1;
+            flex-direction: row;
+            border: 1px solid #fff;
+            background: #ccc
+        }
+
+        .container_2 {
+            background: silver;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            /* flex-flow: row wrap;  
+                is similar to 
+                flex-direction: row;
+                 flex-wrap: wrap;
+            */
+        }
+
+        .container_2 div {
+            background-color: #f1f1f1;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+
+        .container_3 {
+            background: silver;
+            display: flex;
+            justify-content: flex-end
+        }
+
+        .container_3 div {
+            background-color: #f1f1f1;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+
+        .container_4 {
+            background: silver;
+            display: flex;
+            align-items : flex-start;
+            flex-flow: row wrap;
+        }
+
+        .container_4 div {
+            background-color: #f1f1f1;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container_1">
+        <div id="one">One</div>
+        <div id="two">Two</div>
+        <div id="three">Three</div>
+    </div>
+    <div class="break"></div>
+    <div class="container_2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+
+    <div class="break"></div>
+    <div class="container_3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+    <div class="break"></div>
+    <div class="container_4">
+        <div>1<br/>1<br/>1<br/>1<br/>1<br/></div>
+        <div>21<br/>1<br/></div>
+        <div>31<br/>1<br/></div>
+        <div>41<br/>1<br/>1<br/>1<br/></div>
+        <div>51<br/>1<br/></div>
+        <div>61<br/>1<br/>1<br/></div>
+        <div>71<br/>1<br/></div>
+        <div>81<br/>1<br/>1<br/></div>
+        <div>91<br/>1<br/>1<br/></div>
+        <div>101<br/></div>
+         <div>1<br/>1<br/>1<br/>1<br/>1<br/></div>
+        <div>21<br/>1<br/></div>
+        <div>31<br/>1<br/></div>
+        <div>41<br/>1<br/>1<br/>1<br/></div>
+        <div>51<br/>1<br/></div>
+        <div>61<br/>1<br/>1<br/></div>
+        <div>71<br/>1<br/></div>
+        <div>81<br/>1<br/>1<br/></div>
+        <div>91<br/>1<br/>1<br/></div>
+        <div>101<br/></div>
+    </div>
+</body>
+
+</html>

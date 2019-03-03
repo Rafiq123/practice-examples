@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <script>
+        (function () {
+            window.onload = function () {
+                var scope = {
+                    oneWay : 'test'
+                };
+                var obj = new DataBinding(scope, document);
+                obj.render();
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <div controller>
+        <input type="text" data-model="name" placeholder="Name">
+        <div>{name}</div>
+        <input type="text" data-model="age" placeholder="Age">
+        <div>{age}</div>
+        <input type="text" data-model="phone" placeholder="Phone">
+        <div>{phone}</div>
+        
+
+        <label>OneWay Bind : </label>
+        <div>{oneWay}</div>
+    </div>
+
+</body>
+
+</html>

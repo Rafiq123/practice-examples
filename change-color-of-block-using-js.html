@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parent div {
+            background: #ab9797;
+            border: 1px solid #fff;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parent">
+        <div ></div>
+        <div ></div>
+        <div ></div>
+        <div ></div>
+    </div>
+
+    <script>
+        (function(){
+            var list = document.querySelectorAll('.parent div');
+            [].map.call(list,function(item){
+                item.addEventListener('click',onclickBlocks);
+            });
+
+            function onclickBlocks(){
+                [].map.call(list,function(item){
+                    item.style.background = "#ab9797";
+                });
+                this.style.background = "red";
+            }
+        })();
+    </script>
+</body>
+
+</html>

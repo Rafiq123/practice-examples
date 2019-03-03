@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #dvd{
+            width:200px;
+            height: 200px;
+            background-image: url('dvd_1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation-name: dvdPlay;
+            animation-iteration-count: infinite;
+            animation-delay: 0.5s;
+            animation-direction: normal;
+            animation-duration: 0.5s;
+            animation-timing-function: linear;
+
+        }
+        .wrapper{
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            border: 2px dotted #ccc;
+            
+        }
+
+        @keyframes dvdPlay {
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="dvd"></div>
+    </div>
+</body>
+</html>
