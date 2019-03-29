@@ -24,6 +24,7 @@ class DataBinding {
         //to update add the data-bind attribute if it there is interpolation symbol and configure keyup event for data-model to implement two way binding
         var binding = Array.from(this.document.querySelector('[controller]').children);
         binding.forEach((item) => {
+            console.log(item)
             if (this.hasInterPolationBindings(item)) {
                 var value = item.textContent.slice(1, -1);
                 item.setAttribute('data-bind', value);
