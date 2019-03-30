@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            padding: 0;
+            margin: 0;
+        }
+
+        table tr td {
+            height: 100px;
+            width: 100px;
+            background: greenyellow;
+            text-align: center;
+            vertical-align: middle
+        }
+
+        .highLight {
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let selectedTd;
+            let table = document.getElementById('myTable');
+            table.addEventListener('click', (e) => {
+                let target = e.target;
+                // if (target.tagName !== 'TD') return;
+                highLight(target);
+            });
+
+            function highLight(target) {
+                console.log(event.target.closest('td'));
+                if (selectedTd) {
+                    selectedTd.classList.remove('highLight');
+                }
+                selectedTd = event.target.closest('td');
+                selectedTd.classList.add('highLight');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table id="myTable">
+        <tr>
+            <td>
+                <div>div</div>
+            </td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        class Databind {
+            constructor(scope) {
+                this.scope = scope;
+                this.interpolationMatch = ['{', '}'];
+                this.configureBindAttributes();
+            }
+
+            render() {
+                let elements = Array.from(document.querySelectorAll('[data-bind]'));
+                elements.forEach((item) => {
+                    let bindAttribute = item.getAttribute('data-bind');
+                    if (bindAttribute) {
+                        item.textContent = this.scope[bindAttribute] ? this.scope[bindAttribute] : '';
+                    }
+                })
+            }
+
+            updateScope(item){
+                let property = item.getAttribute('data-model');
+                this.scope[property] = item.value;
+                this.render();
+            }
+
+            hasTwoWayBindings(item) {
+                return item.getAttribute('data-model') != '';
+            }
+
+            hasInterpolution(item) {
+                return item.textContent.indexOf(this.interpolationMatch[0]) >= 0 && item.textContent.indexOf(this.interpolationMatch[1]) >= 0;
+            }
+
+            configureBindAttributes() {
+                let elements = Array.from(document.querySelector('[controller]').children);
+                elements.forEach((item) => {
+                    if (this.hasInterpolution(item)) {
+                        item.setAttribute('data-bind', item.textContent.slice(1, -1));
+                    }
+                    else if (this.hasTwoWayBindings(item)) {
+                        item.addEventListener('keyup', () => { this.updateScope(item)})
+                    }
+                })
+            }
+        }
+
+        window.onload = function () {
+            let scope = {
+                name: 'rafiq',
+                age: 29,
+                email: 'rafiq4ahmad@gmail.com'
+            }
+            const dataBind = new Databind(scope);
+            dataBind.render();
+        }
+    </script>
+</head>
+
+<body>
+    <div controller>
+        <div>{name}</div>
+        <div>{age}</div>
+        <div>{email}</div>
+
+        <input type="text" data-model="name" placeholder="Name">
+        <div>{name}</div>
+
+
+        <input type="text" data-model="phone" placeholder="Name">
+        <div>{phone}</div>
+    </div>
+</body>
+
+</html>

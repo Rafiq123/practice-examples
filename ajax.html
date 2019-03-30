@@ -39,6 +39,12 @@
                 }
             }
         })();
+
+        // 0 (uninitialized) or (request not initialized)
+        // 1 (loading) or (server connection established)
+        // 2 (loaded) or (request received)
+        // 3 (interactive) or (processing request)
+        // 4 (complete) or (request finished and response is ready)
     </script>
 </body>
 
