@@ -7,148 +7,78 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .break {
-            margin-bottom: 10px;
-        }
-
-        .container_1 {
+        .wrapper {
             display: flex;
-            flex-direction: row;
-        }
-
-        #one {
-            height: 100px;
-            flex-basis: 200px;
-            flex-grow: 1;
-            flex-direction: row;
-            border: 1px solid #fff;
-            background: #ccc
-        }
-
-        #two {
-            height: 100px;
-            flex-basis: 200px;
-            flex-grow: 2;
-            flex-direction: row;
-            border: 1px solid #fff;
-            background: #ccc
-        }
-
-        #three {
-            height: 100px;
-            flex-basis: 200px;
-            flex-grow: 1;
-            flex-direction: row;
-            border: 1px solid #fff;
-            background: #ccc
-        }
-
-        .container_2 {
-            background: silver;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-
-            /* flex-flow: row wrap;  
-                is similar to 
-                flex-direction: row;
-                 flex-wrap: wrap;
-            */
-        }
-
-        .container_2 div {
-            background-color: #f1f1f1;
-            width: 200px;
-            margin: 10px;
-            text-align: center;
-            line-height: 75px;
-            font-size: 30px;
-        }
-
-        .container_3 {
-            background: silver;
-            display: flex;
-            justify-content: flex-end
-        }
-
-        .container_3 div {
-            background-color: #f1f1f1;
-            width: 200px;
-            margin: 10px;
-            text-align: center;
-            line-height: 75px;
-            font-size: 30px;
-        }
-
-        .container_4 {
-            background: silver;
-            display: flex;
-            align-items : flex-start;
             flex-flow: row wrap;
+            font-weight: bold;
+            text-align: center;
         }
 
-        .container_4 div {
-            background-color: #f1f1f1;
-            width: 200px;
-            margin: 10px;
-            text-align: center;
-            line-height: 75px;
-            font-size: 30px;
+        .wrapper>* {
+            padding: 10px;
+            flex: 1 100%;
+        }
+
+        .header {
+            background: tomato;
+        }
+
+        .footer {
+            background: lightgreen;
+        }
+
+        .main {
+            text-align: left;
+            background: deepskyblue;
+        }
+
+        .aside-1 {
+            background: gold;
+        }
+
+        .aside-2 {
+            background: hotpink;
+        }
+
+        @media all and (min-width: 600px) {
+            .aside {
+                flex: 1 0 0;
+            }
+        }
+
+        @media all and (min-width: 800px) {
+            .main {
+                flex: 3 0px;
+            }
+            .aside-1 {
+                order: 1;
+            }
+            .main {
+                order: 2;
+            }
+            .aside-2 {
+                order: 3;
+            }
+            .footer {
+                order: 4;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container_1">
-        <div id="one">One</div>
-        <div id="two">Two</div>
-        <div id="three">Three</div>
-    </div>
-    <div class="break"></div>
-    <div class="container_2">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>10</div>
+    <div class="wrapper">
+        <header class="header">Header</header>
+        <article class="main">
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+                quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+                Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        </article>
+        <aside class="aside aside-1">Aside 1</aside>
+        <aside class="aside aside-2">Aside 2</aside>
+        <footer class="footer">Footer</footer>
     </div>
 
-    <div class="break"></div>
-    <div class="container_3">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-    </div>
-
-    <div class="break"></div>
-    <div class="container_4">
-        <div>1<br/>1<br/>1<br/>1<br/>1<br/></div>
-        <div>21<br/>1<br/></div>
-        <div>31<br/>1<br/></div>
-        <div>41<br/>1<br/>1<br/>1<br/></div>
-        <div>51<br/>1<br/></div>
-        <div>61<br/>1<br/>1<br/></div>
-        <div>71<br/>1<br/></div>
-        <div>81<br/>1<br/>1<br/></div>
-        <div>91<br/>1<br/>1<br/></div>
-        <div>101<br/></div>
-         <div>1<br/>1<br/>1<br/>1<br/>1<br/></div>
-        <div>21<br/>1<br/></div>
-        <div>31<br/>1<br/></div>
-        <div>41<br/>1<br/>1<br/>1<br/></div>
-        <div>51<br/>1<br/></div>
-        <div>61<br/>1<br/>1<br/></div>
-        <div>71<br/>1<br/></div>
-        <div>81<br/>1<br/>1<br/></div>
-        <div>91<br/>1<br/>1<br/></div>
-        <div>101<br/></div>
-    </div>
 </body>
 
 </html>
