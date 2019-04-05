@@ -14,7 +14,7 @@
                     return function () {
                         const context = this;
                         const args = arguments;
-                        clearInterval(debounceTimer);
+                        clearTimeout(debounceTimer);
                         debounceTimer = setTimeout(() => {
                             func.call(this, args)
                         }, delay);
