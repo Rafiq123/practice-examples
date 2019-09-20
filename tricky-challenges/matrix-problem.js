@@ -39,3 +39,35 @@ function matrixSpiral(n) {
     console.log(results);
 }
 console.log(matrixSpiral(6));
+
+
+
+//2 :  write a function to compute the diagonal difference of matric
+//input let arr = [
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ];
+
+//output : 0
+
+let printMatrixDiagonally = (arr) => {
+    let n = arr.length;
+    let sum1 = 0;
+    let sum2 = 0;
+    for(i=0;i < arr.length;i++){
+        sum1 += arr[i][i];
+        sum2 += arr[n-1-i][i];
+    }
+
+    console.log(sum1 - sum2);
+}
+
+
+let arr = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+];
+
+printMatrixDiagonally(arr);
